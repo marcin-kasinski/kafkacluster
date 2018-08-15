@@ -6,7 +6,7 @@ MAINTAINER Marcin Kasiñski <marcin.kasinski@gmail.com>
 #ZOOKEEPER_CONNECT=x.x.x.x:2181,x.x.x.x:2181,x.x.x.x:2181
 #BROKER_NODES="1=x.x.x.x;2=x.x.x.x"
 
-ENV KAFKA_MIRROR=http://ftp.man.poznan.pl/apache/kafka/1.1.0/ \
+ENV KAFKA_MIRROR=http://ftp.man.poznan.pl/apache/kafka/2.0.0/ \
 	KAFKA_VERSION=kafka_2.12-2.0.0 \
 	ZOOKEEPER_CONNECT="mainserver:2181" \
 	BROKER_NODES="1=mainserver.sdssd.sdsd.d;2=mainserver2" \
