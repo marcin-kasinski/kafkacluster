@@ -30,7 +30,7 @@ RUN echo ${KAFKA_MIRROR}${KAFKA_VERSION}.tgz && curl -o /opt/${KAFKA_VERSION}.tg
 	rm /opt/${KAFKA_VERSION}.tgz && ln -s /opt/${KAFKA_VERSION} /opt/kafka && \
 	curl -o /opt/jmx_prometheus_javaagent/jmx_prometheus_javaagent-${PROMETHEUS_JMX_AGENT_VERSION}.jar ${PROMETHEUS_JMX_AGENT_MIRROR}${PROMETHEUS_JMX_AGENT_VERSION}/jmx_prometheus_javaagent-${PROMETHEUS_JMX_AGENT_VERSION}.jar && \
 	ln -s /opt/jmx_prometheus_javaagent/jmx_prometheus_javaagent-${PROMETHEUS_JMX_AGENT_VERSION}.jar /opt/jmx_prometheus_javaagent/jmx_prometheus_javaagent.jar && \
-	sed -i -e 's/\r//g' /opt/jmx_prometheus_javaagent/jmx_prometheus_javaagent_kafka.yml
+	sed -i -e 's/\r//g' /opt/jmx_prometheus_javaagent/jmx_prometheus_javaagent_kafka.yaml
 
 WORKDIR /opt/kafka
 
