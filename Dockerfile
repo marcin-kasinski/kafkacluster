@@ -18,8 +18,7 @@ ENV KAFKA_OPTS=-javaagent:/opt/jmx_prometheus_javaagent/jmx_prometheus_javaagent
 
 RUN mkdir /usr/src/myapp && mkdir /opt/jmx_prometheus_javaagent
 
-ADD jmx_prometheus_javaagent/jmx_prometheus_javaagent_kafka.yml /opt/jmx_prometheus_javaagent/jmx_prometheus_javaagent_kafka.yml
-
+ADD jmx_prometheus_javaagent/jmx_prometheus_javaagent_kafka.yaml /opt/jmx_prometheus_javaagent/jmx_prometheus_javaagent_kafka.yaml
 
 ADD libs.sh /usr/src/myapp/libs.sh
 RUN sed -i -e 's/\r//g' /usr/src/myapp/libs.sh
