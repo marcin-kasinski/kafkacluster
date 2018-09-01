@@ -16,7 +16,7 @@ echo "zookeeper.connect=$ZOOKEEPER_CONNECT" >> "$CONFIG"
 
 
 processBROKER_NODES
-
+process_param_config
 
 cat /opt/kafka/config/server.properties
 

@@ -34,3 +34,35 @@ fi
 done
 
 }
+
+
+
+param_prefix="KAFKA_PARAM_"
+
+add_param_to_config()
+{
+local key=$1
+local value=$2
+
+#remove prefix
+key=${key#"$param_prefix"}
+%replace _ with .
+key=${key//[_]/.}
+
+echo "adding line to config key ["$key"] value ["$value"]"
+echo "$key=$value" >> $CONFIG
+}
+
+process_param_config()
+{
+
+
+for line in $(set); do
+	KEY=`echo $line | cut -d "=" -f 1`
+	VALUE=`echo $line | cut -d "=" -f 2`
+
+	[[ $KEY =~ ^"$param_prefix" ]] && add_param_to_config $KEY $VALUE
+	
+done
+
+}
