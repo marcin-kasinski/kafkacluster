@@ -46,7 +46,7 @@ local value=$2
 
 #remove prefix
 key=${key#"$param_prefix"}
-%replace _ with .
+#replace _ with .
 key=${key//[_]/.}
 
 echo "adding line to config key ["$key"] value ["$value"]"
