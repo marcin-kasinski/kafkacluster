@@ -1,6 +1,6 @@
-FROM openjdk:8
+FROM openjdk:9
 #FROM ubuntu:16.04
-MAINTAINER Marcin Kasiñski <marcin.kasinski@gmail.com> 
+MAINTAINER Marcin Kasiï¿½ski <marcin.kasinski@gmail.com> 
 
 #ZOOKEEPER_CONNECT=x.x.x.x:2181,x.x.x.x:2181,x.x.x.x:2181
 #BROKER_NODES="1=x.x.x.x;2=x.x.x.x"
