@@ -3,12 +3,12 @@ FROM openjdk:9
 MAINTAINER Marcin Kasi�ski <marcin.kasinski@gmail.com> 
 
 #ZOOKEEPER_CONNECT=x.x.x.x:2181,x.x.x.x:2181,x.x.x.x:2181
-#BROKER_NODES="1=x.x.x.x;2=x.x.x.x"
+#BROKER_NODES="kafka-0.k-hs.default.svc.cluster.local:9092,kafka-1.k-hs.default.svc.cluster.local:9092,kafka-2.k-hs.default.svc.cluster.local:9092"
 
 ENV KAFKA_MIRROR=http://ftp.man.poznan.pl/apache/kafka/2.0.0/ \
 	KAFKA_VERSION=kafka_2.12-2.0.0 \
 	ZOOKEEPER_CONNECT="mainserver:2181" \
-	BROKER_NODES="1=mainserver.sdssd.sdsd.d;2=mainserver2" \
+	BROKER_NODES="mainserver.sdssd.sdsd.d,mainserver2" \
 	CONFIG="/opt/kafka/config/server.properties" \
 	PROMETHEUS_JMX_AGENT_MIRROR="https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/" \
 	PROMETHEUS_JMX_AGENT_VERSION="0.3.1" \

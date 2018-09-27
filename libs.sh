@@ -1,7 +1,8 @@
 
 processBROKER_NODES(){
 
-nodes=$(echo $BROKER_NODES | tr ";" "\n")
+
+nodes=$(echo $BROKER_NODES | tr "," "\n")
 
 HOSTNAME=`hostname -f`
 #HOSTNAME=mainserver.sdssd.sdsd.d
@@ -10,28 +11,26 @@ echo HOSTNAME=[$HOSTNAME]
 
 echo listing nodes
 
-for addr in $nodes
+INDEX=1;
+
+for SERVER in $nodes
 do
 
-	echo node:            $addr
+	SERVER=`echo $SERVER | cut -d ":" -f 1`
+
+	echo server :$SERVER index $INDEX
+
+    if [ "$SERVER" == "$HOSTNAME" ]; then
+          echo "Strings match $SERVER $INDEX"
+
+      	  echo "found server in env  $SERVER $INDEX"
+          echo "broker.id=$INDEX" >> $CONFIG
+    fi
+
+	INDEX=$((INDEX + 1))
 	
-	INDEXWITHSERVER=`echo $addr | cut -d ":" -f 1`
-	echo INDEXWITHSERVER:            $INDEXWITHSERVER
-	INDEX=`echo $INDEXWITHSERVER | cut -d "=" -f 1`
-	echo INDEX:            $INDEX
-
-	SERVER=`echo $INDEXWITHSERVER | cut -d "=" -f 2`
-	echo SERVER:[$SERVER]
-
-if [ "$SERVER" == "$HOSTNAME" ]; then
-    echo "Strings match"
-
-		echo "found server index > $INDEX "
-		echo "broker.id=$INDEX" >> $CONFIG
-fi
-	
-#    echo "$addr" >> /opt/zookeeper/conf/zoo.cfg
 done
+
 
 }
 
