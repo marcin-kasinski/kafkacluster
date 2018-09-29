@@ -20,6 +20,10 @@ if [ "$AUTH_TYPE" == "SASL_PLAINTEXT" ]; then
 fi
 
 processBROKER_NODES
+
+# replace {HOSTNAME}
+KAFKA_PARAM_advertised_listeners="${KAFKA_PARAM_advertised_listeners//'{HOSTNAME}'/$HOSTNAME}"
+
 process_param_config
 
 echo "Configuration"
