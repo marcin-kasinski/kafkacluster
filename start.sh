@@ -21,10 +21,11 @@ fi
 
 processBROKER_NODES
 
-# replace {HOSTNAME}
-KAFKA_PARAM_advertised_listeners="${KAFKA_PARAM_advertised_listeners//'{HOSTNAME}'/$HOSTNAME}"
-
 process_param_config
+
+#replace
+sudo sed -i -e 's/{HOSTNAME}/'"$HOSTNAME"'/g' $CONFIG
+
 
 echo "Configuration"
 cat $CONFIG
