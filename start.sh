@@ -20,9 +20,6 @@ if [ "$AUTH_TYPE" == "SASL_PLAINTEXT" ]; then
 
 fi
 
-
-
-
 processBROKER_NODES
 process_param_config
 
