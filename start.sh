@@ -11,8 +11,10 @@ echo "" >$CONFIG
 
 HOSTNAME=`hostname -f`
 
-echo "advertised.host.name=$HOSTNAME" >> "$CONFIG"
-echo "zookeeper.connect=$ZOOKEEPER_CONNECT" >> "$CONFIG"
+#echo "advertised.host.name=$HOSTNAME" >> "$CONFIG"
+#echo "zookeeper.connect=$ZOOKEEPER_CONNECT" >> "$CONFIG"
+echo "advertised.listeners=$AUTH_TYPE://$HOSTNAME" >> "$CONFIG"
+
 
 
 processBROKER_NODES
