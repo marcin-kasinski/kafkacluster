@@ -60,9 +60,12 @@ process_param_config()
 
 for line in $(set); do
 	KEY=`echo $line | cut -d "=" -f 1`
+	echo "KEY $KEY"
 	VALUE=`echo $line | cut -d "=" -f 2`
+	echo "VALUE $VALUE"
 	# replace {HOSTNAME}
     VALUE="${VALUE//'{HOSTNAME}'/$HOSTNAME}"
+	echo "VALUE $VALUE"
 	[[ $KEY =~ ^"$param_prefix" ]] && add_param_to_config $KEY $VALUE
 	
 done
