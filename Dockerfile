@@ -25,7 +25,7 @@ RUN sed -i -e 's/\r//g' /usr/src/myapp/libs.sh
 ADD start.sh /usr/src/myapp/start.sh
 RUN sed -i -e 's/\r//g' /usr/src/myapp/start.sh
 
-RUN apt install krb5-user && echo ${KAFKA_MIRROR}${KAFKA_VERSION}.tgz && curl -o /opt/${KAFKA_VERSION}.tgz ${KAFKA_MIRROR}${KAFKA_VERSION}.tgz && \
+RUN apt update && apt install krb5-user && echo ${KAFKA_MIRROR}${KAFKA_VERSION}.tgz && curl -o /opt/${KAFKA_VERSION}.tgz ${KAFKA_MIRROR}${KAFKA_VERSION}.tgz && \
 	tar -zxf /opt/${KAFKA_VERSION}.tgz -C /opt && \
 	rm /opt/${KAFKA_VERSION}.tgz && ln -s /opt/${KAFKA_VERSION} /opt/kafka && \
 	curl -o /opt/jmx_prometheus_javaagent/jmx_prometheus_javaagent-${PROMETHEUS_JMX_AGENT_VERSION}.jar ${PROMETHEUS_JMX_AGENT_MIRROR}${PROMETHEUS_JMX_AGENT_VERSION}/jmx_prometheus_javaagent-${PROMETHEUS_JMX_AGENT_VERSION}.jar && \
