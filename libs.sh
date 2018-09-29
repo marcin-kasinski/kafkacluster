@@ -64,7 +64,7 @@ for line in $(set); do
 	VALUE=`echo $line | cut -d "=" -f 2`
 	#echo "VALUE $VALUE"
 	# replace {HOSTNAME}
-    VALUE="${VALUE//'|HOSTNAME|'/$HOSTNAME}"
+    VALUE="${VALUE//|HOSTNAME|/$HOSTNAME}"
 	#echo "VALUE $VALUE"
 	[[ $KEY =~ ^"$param_prefix" ]] && add_param_to_config $KEY $VALUE
 	
