@@ -57,6 +57,7 @@ echo "$key=$value" >> $CONFIG
 process_param_config()
 {
 
+echo "process_param_config()"
 
 for line in $(set); do
 	KEY=`echo $line | cut -d "=" -f 1`
