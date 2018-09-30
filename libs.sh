@@ -68,7 +68,7 @@ for line in $(set); do
     #VALUE=${VALUE//[\{HOSTNAME\}]/$HOSTNAME}
     #VALUE=${VALUE//[']/ }
     #remove '
-    VALUE=${VALUE//'}
+    #VALUE=${VALUE//'}
 	#echo "VALUE $VALUE"
 	[[ $KEY =~ ^"$param_prefix" ]] && add_param_to_config $KEY $VALUE
 	
