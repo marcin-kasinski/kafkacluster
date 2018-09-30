@@ -1,11 +1,6 @@
 #!/bin/bash
 source /usr/src/myapp/libs.sh
 
-ls -l /opt
-
-ls -l /usr/src/myapp/
-
-
 cp $CONFIG $CONFIG.OLD
 echo "" >$CONFIG
 
@@ -18,7 +13,7 @@ HOSTNAME=`hostname -f`
 
 
 #if [ "$AUTH_TYPE" == "SASL_PLAINTEXT" ]; then 
-KAFKA_OPTS="$KAFKA_OPTS -Djava.security.auth.login.config=$JAAS_FILE_LOCATION"
+#KAFKA_OPTS="$KAFKA_OPTS -Djava.security.auth.login.config=$JAAS_FILE_LOCATION"
 #fi
 
 processBROKER_NODES
