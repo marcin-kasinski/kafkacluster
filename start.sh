@@ -29,3 +29,4 @@ cat $CONFIG
 
 #sleep 300000
 /opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
+sleep 360000
