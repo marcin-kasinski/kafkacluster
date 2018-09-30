@@ -65,7 +65,8 @@ for line in $(set); do
 	VALUE=`echo $line | cut -d "=" -f 2`
 	#echo "VALUE $VALUE"
 	# replace %HOSTNAME%
-    VALUE=${VALUE//[\%HOSTNAME\%]/$HOSTNAME}
+    #VALUE=${VALUE//[\%HOSTNAME\%]/$HOSTNAME}
+    VALUE=${VALUE//\{HOSTNAME\}/$HOSTNAME}
     #VALUE=${VALUE//'}
     #remove '
     #VALUE=${VALUE//'}
