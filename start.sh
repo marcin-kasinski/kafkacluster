@@ -15,7 +15,12 @@ HOSTNAME=`hostname -f`
 #echo "zookeeper.connect=$ZOOKEEPER_CONNECT" >> "$CONFIG"
 #echo "advertised.listeners=PLAINTEXT://$HOSTNAME:9093,$AUTH_TYPE://$HOSTNAME:9094" >> "$CONFIG"
 
-if [ "$AUTH_TYPE" == "SASL_PLAINTEXT" ]; then 
+
+
+#if [ "$AUTH_TYPE" == "SASL_PLAINTEXT" ]; then 
+if [[ $KAFKA_PARAM_advertised_listeners =~ .*SASL_PLAINTEXT.* ]]
+then
+  echo "THERE IS SASL"
   KAFKA_OPTS="$KAFKA_OPTS -Djava.security.auth.login.config=$JAAS_FILE_LOCATION"
 fi
 
