@@ -18,9 +18,7 @@ HOSTNAME=`hostname -f`
 
 
 #if [ "$AUTH_TYPE" == "SASL_PLAINTEXT" ]; then 
-#if [[ $KAFKA_PARAM_advertised_listeners =~ .*SASL_PLAINTEXT.* ]]; then 
-#  echo "THERE IS SASL"
-  KAFKA_OPTS="$KAFKA_OPTS -Djava.security.auth.login.config=$JAAS_FILE_LOCATION"
+KAFKA_OPTS="$KAFKA_OPTS -Djava.security.auth.login.config=$JAAS_FILE_LOCATION"
 #fi
 
 processBROKER_NODES
