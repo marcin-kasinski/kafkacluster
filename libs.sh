@@ -66,10 +66,13 @@ for line in $(set); do
 	# replace {HOSTNAME}
     #VALUE="${VALUE//|HOSTNAME|/$HOSTNAME}"
     #VALUE=${VALUE//[\{HOSTNAME\}]/$HOSTNAME}
-    VALUE=${VALUE//'}
+    #VALUE=${VALUE//'}
     #remove '
     #VALUE=${VALUE//'}
 	#echo "VALUE $VALUE"
+
+	VALUE=`echo $VALUE | cut -d "'" -f 2`
+
 	[[ $KEY =~ ^"$param_prefix" ]] && add_param_to_config $KEY $VALUE
 	
 done
