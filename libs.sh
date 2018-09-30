@@ -66,7 +66,7 @@ for line in $(set); do
 	# replace {HOSTNAME}
     #VALUE="${VALUE//|HOSTNAME|/$HOSTNAME}"
     #VALUE=${VALUE//[\{HOSTNAME\}]/$HOSTNAME}
-    #VALUE=${VALUE//[']/ }
+    VALUE=${VALUE//[']/ }
     #remove '
     #VALUE=${VALUE//'}
 	#echo "VALUE $VALUE"
