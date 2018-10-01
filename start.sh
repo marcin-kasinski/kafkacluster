@@ -21,7 +21,7 @@ processBROKER_NODES
 process_param_config
 
 #replace
-sed -i -e 's/{HOSTNAME}/"$HOSTNAME"/g' $CONFIG
+sed -i -e 's/{HOSTNAME}/"$HOSTNAME"/g' $JAAS_FILE_LOCATION
 
 
 echo "Configuration"
