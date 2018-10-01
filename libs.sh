@@ -1,11 +1,7 @@
 
 processBROKER_NODES(){
 
-
 nodes=$(echo $BROKER_NODES | tr "," "\n")
-
-#HOSTNAME=`hostname -f`
-#HOSTNAME=mainserver.sdssd.sdsd.d
 
 echo HOSTNAME_FQDN=[$HOSTNAME_FQDN]
 
