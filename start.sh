@@ -17,7 +17,6 @@ process_param_config
 echo replacing {HOSTNAME_FQDN} with $HOSTNAME_FQDN
 cp $JAAS_FILE_LOCATION_RO $JAAS_FILE_LOCATION
 sed -i -e 's/{HOSTNAME_FQDN}/'"$HOSTNAME_FQDN"'/g' $JAAS_FILE_LOCATION
-
 cat $JAAS_FILE_LOCATION
 
 echo "Configuration"
