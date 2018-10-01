@@ -22,5 +22,7 @@ cat $JAAS_FILE_LOCATION
 echo "Configuration"
 cat $CONFIG
 
+cp /opt/kafka/config/$HOSTNAME.service.keytab /opt/kafka/config/kafka.service.keytab
+
 /opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
 sleep 600000
