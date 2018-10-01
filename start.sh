@@ -22,6 +22,8 @@ cat $JAAS_FILE_LOCATION
 echo "Configuration"
 cat $CONFIG
 
+echo copy /opt/kafka/config/$HOSTNAME.service.keytab to /opt/kafka/config/kafka.service.keytab
+
 cp /opt/kafka/config/$HOSTNAME.service.keytab /opt/kafka/config/kafka.service.keytab
 
 /opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
