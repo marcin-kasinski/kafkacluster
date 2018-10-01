@@ -1,6 +1,8 @@
 #!/bin/bash
 source /usr/src/myapp/libs.sh
 
+echo "Starting..."
+
 cp $CONFIG $CONFIG.OLD
 echo "" >$CONFIG
 
