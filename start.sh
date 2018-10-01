@@ -7,7 +7,7 @@ echo "" >$CONFIG
 HOSTNAME_FQDN=`hostname -f`
 
 #if [ "$AUTH_TYPE" == "SASL_PLAINTEXT" ]; then 
-KAFKA_OPTS="$KAFKA_OPTS $EXTRA_JAVA_ARGS -Djava.security.auth.login.config=$JAAS_FILE_LOCATION"
+EXTRA_KAFKA_OPTS="$KAFKA_OPTS $EXTRA_JAVA_ARGS -Djava.security.auth.login.config=$JAAS_FILE_LOCATION"
 #fi
 
 processBROKER_NODES
@@ -26,5 +26,5 @@ echo copy /opt/kafka/config/$HOSTNAME.service.keytab to /opt/kafka/config/kafka.
 
 cp /opt/kafka/config/$HOSTNAME.service.keytab /opt/kafka/config/kafka.service.keytab
 
-/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
+KAFKA_OPTS=$EXTRA_KAFKA_OPTS /opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
 sleep 600000
