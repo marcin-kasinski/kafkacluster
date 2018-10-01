@@ -7,7 +7,7 @@ echo "" >$CONFIG
 HOSTNAME_FQDN=`hostname -f`
 
 #if [ "$AUTH_TYPE" == "SASL_PLAINTEXT" ]; then 
-KAFKA_OPTS="$KAFKA_OPTS -Djava.security.auth.login.config=$JAAS_FILE_LOCATION"
+KAFKA_OPTS="$KAFKA_OPTS $EXTRA_JAVA_ARGS -Djava.security.auth.login.config=$JAAS_FILE_LOCATION"
 #fi
 
 processBROKER_NODES
