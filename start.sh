@@ -21,6 +21,7 @@ processBROKER_NODES
 process_param_config
 
 echo replacing {HOSTNAME}
+cd JAAS_FILE_LOCATION_RO JAAS_FILE_LOCATION
 sed -i -e 's/{HOSTNAME}/"$HOSTNAME"/g' $JAAS_FILE_LOCATION
 
 
