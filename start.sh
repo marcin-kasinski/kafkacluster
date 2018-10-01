@@ -4,13 +4,7 @@ source /usr/src/myapp/libs.sh
 cp $CONFIG $CONFIG.OLD
 echo "" >$CONFIG
 
-HOSTNAME=`hostname -f`
-
-#echo "advertised.host.name=$HOSTNAME" >> "$CONFIG"
-#echo "zookeeper.connect=$ZOOKEEPER_CONNECT" >> "$CONFIG"
-#echo "advertised.listeners=PLAINTEXT://$HOSTNAME:9093,$AUTH_TYPE://$HOSTNAME:9094" >> "$CONFIG"
-
-
+HOSTNAME_FQDN=`hostname -f`
 
 #if [ "$AUTH_TYPE" == "SASL_PLAINTEXT" ]; then 
 KAFKA_OPTS="$KAFKA_OPTS -Djava.security.auth.login.config=$JAAS_FILE_LOCATION"
@@ -20,10 +14,11 @@ processBROKER_NODES
 
 process_param_config
 
-echo replacing {HOSTNAME}
+echo replacing {HOSTNAME_FQDN} to $HOSTNAME_FQDN
 cp $JAAS_FILE_LOCATION_RO $JAAS_FILE_LOCATION
-sed -i -e 's/{HOSTNAME}/"$HOSTNAME"/g' $JAAS_FILE_LOCATION
+sed -i -e 's/{HOSTNAME_FQDN}/'"$HOSTNAME_FQDN"'/g' $JAAS_FILE_LOCATION
 
+cat $JAAS_FILE_LOCATION
 
 echo "Configuration"
 cat $CONFIG

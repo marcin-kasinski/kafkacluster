@@ -4,10 +4,10 @@ processBROKER_NODES(){
 
 nodes=$(echo $BROKER_NODES | tr "," "\n")
 
-HOSTNAME=`hostname -f`
+#HOSTNAME=`hostname -f`
 #HOSTNAME=mainserver.sdssd.sdsd.d
 
-echo HOSTNAME=[$HOSTNAME]
+echo HOSTNAME_FQDN=[$HOSTNAME_FQDN]
 
 echo listing nodes
 
@@ -20,7 +20,7 @@ do
 
 	echo server :$SERVER index $INDEX
 
-    if [ "$SERVER" == "$HOSTNAME" ]; then
+    if [ "$SERVER" == "$HOSTNAME_FQDN" ]; then
           echo "Strings match $SERVER $INDEX"
 
       	  echo "found server in env  $SERVER $INDEX"
@@ -64,9 +64,9 @@ for line in $(set); do
 	#echo "KEY $KEY"
 	VALUE=`echo $line | cut -d "=" -f 2`
 	#echo "VALUE $VALUE"
-	# replace %HOSTNAME%
+	# replace {HOSTNAME_FQDN}
     #VALUE=${VALUE//[\%HOSTNAME\%]/$HOSTNAME}
-    VALUE=${VALUE//\{HOSTNAME\}/$HOSTNAME}
+    VALUE=${VALUE//\{HOSTNAME_FQDN\}/$HOSTNAME_FQDN}
     #VALUE=${VALUE//'}
     #remove '
     #VALUE=${VALUE//'}
