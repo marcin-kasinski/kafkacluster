@@ -12,7 +12,7 @@ HOSTNAME_FQDN=`hostname -f`
 #EXTRA_KAFKA_OPTS="$KAFKA_OPTS $EXTRA_JAVA_ARGS -Djava.security.auth.login.config=$JAAS_FILE_LOCATION"
 #fi
 
-if [ -z "EXTRA_KAFKA_OPTS" ]; then 
+if [[ ${EXTRA_KAFKA_OPTS} && ${EXTRA_KAFKA_OPTS-x} ]]; then 
   #there is EXTRA_KAFKA_OPTS
   EXTRA_KAFKA_OPTS="$KAFKA_OPTS $EXTRA_JAVA_ARGS
 fi
@@ -21,7 +21,7 @@ processBROKER_NODES
 
 process_param_config
 
-if [ -z "JAAS_FILE_LOCATION" ]; then 
+if [[ ${JAAS_FILE_LOCATION} && ${JAAS_FILE_LOCATION-x} ]]; then 
   #there is JAAS_FILE_LOCATION
   echo replacing {HOSTNAME_FQDN} with $HOSTNAME_FQDN
   cp $JAAS_FILE_LOCATION_RO $JAAS_FILE_LOCATION
