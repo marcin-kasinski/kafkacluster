@@ -4,7 +4,7 @@ source /usr/src/myapp/libs.sh
 echo "Starting..."
 
 echo "Environment variables ..."
-set
+env
 
 cp $CONFIG $CONFIG.OLD
 echo "" >$CONFIG
