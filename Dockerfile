@@ -30,7 +30,7 @@ RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y krb5-user && ech
 	rm /opt/${KAFKA_VERSION}.tgz && ln -s /opt/${KAFKA_VERSION} /opt/kafka && \
 	curl -o /opt/jmx_prometheus_javaagent/jmx_prometheus_javaagent-${PROMETHEUS_JMX_AGENT_VERSION}.jar ${PROMETHEUS_JMX_AGENT_MIRROR}${PROMETHEUS_JMX_AGENT_VERSION}/jmx_prometheus_javaagent-${PROMETHEUS_JMX_AGENT_VERSION}.jar && \
 	ln -s /opt/jmx_prometheus_javaagent/jmx_prometheus_javaagent-${PROMETHEUS_JMX_AGENT_VERSION}.jar /opt/jmx_prometheus_javaagent/jmx_prometheus_javaagent.jar && \
-	sed -i -e 's/\r//g' /opt/jmx_prometheus_javaagent/jmx_prometheus_javaagent_kafka.yaml && echo PATH=\"/opt/kafka/bin:\$PATH\" >>  /home/ubuntu/.profile
+	sed -i -e 's/\r//g' /opt/jmx_prometheus_javaagent/jmx_prometheus_javaagent_kafka.yaml && echo PATH=\"/opt/kafka/bin:\$PATH\" >>  /root/.profile
 	
 
 WORKDIR /opt/kafka
