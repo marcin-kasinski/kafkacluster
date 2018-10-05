@@ -17,7 +17,7 @@ HOSTNAME_FQDN=`hostname -f`
 
 if [[ ${EXTRA_KAFKA_OPTS} && ${EXTRA_KAFKA_OPTS-x} ]]; then 
   #there is EXTRA_KAFKA_OPTS
-  EXTRA_KAFKA_OPTS="$KAFKA_OPTS $EXTRA_JAVA_ARGS"
+  KAFKA_OPTS="$KAFKA_OPTS $EXTRA_JAVA_ARGS"
 fi
 
 processBROKER_NODES
@@ -39,5 +39,5 @@ echo copy /opt/kafka/config/$HOSTNAME.service.keytab to /opt/kafka/config/kafka.
 
 cp /opt/kafka/config/$HOSTNAME.service.keytab /opt/kafka/config/kafka.service.keytab
 
-KAFKA_OPTS=$EXTRA_KAFKA_OPTS /opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
+/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
 sleep 600000
