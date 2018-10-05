@@ -15,10 +15,14 @@ HOSTNAME_FQDN=`hostname -f`
 #EXTRA_KAFKA_OPTS="$KAFKA_OPTS $EXTRA_JAVA_ARGS -Djava.security.auth.login.config=$JAAS_FILE_LOCATION"
 #fi
 
+echo EXTRA_JAVA_ARGS=$EXTRA_JAVA_ARGS
+
 if [[ ${EXTRA_JAVA_ARGS} && ${EXTRA_JAVA_ARGS-x} ]]; then 
-  #there is EXTRA_JAVA_ARGS
+  echo there is EXTRA_JAVA_ARGS
   KAFKA_OPTS="$KAFKA_OPTS $EXTRA_JAVA_ARGS"
 fi
+
+echo KAFKA_OPTS=$KAFKA_OPTS
 
 processBROKER_NODES
 
