@@ -7,7 +7,7 @@ echo HOSTNAME_FQDN=[$HOSTNAME_FQDN]
 
 echo listing nodes
 
-INDEX=0;
+INDEX=1;
 
 for SERVER in $nodes
 do
