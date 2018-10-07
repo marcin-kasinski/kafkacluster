@@ -7,7 +7,7 @@ echo HOSTNAME_FQDN=[$HOSTNAME_FQDN]
 
 echo listing nodes
 
-INDEX=1;
+INDEX=0;
 
 for SERVER in $nodes
 do
@@ -62,9 +62,9 @@ for line in $(set); do
 	VALUE=`echo "$line" | cut -d'=' -f2-`
 	#echo "VALUE $VALUE"
 	# replace {HOSTNAME_FQDN}
-    #VALUE=${VALUE//[\%HOSTNAME\%]/$HOSTNAME}
     VALUE=${VALUE//\{HOSTNAME_FQDN\}/$HOSTNAME_FQDN}
     VALUE=${VALUE//\{HOSTNAME\}/$HOSTNAME}
+    VALUE=${VALUE//\{INDEX\}/$INDEX}
     #VALUE=${VALUE//'}
     #remove '
     #VALUE=${VALUE//'}
