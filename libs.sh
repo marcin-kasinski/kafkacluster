@@ -18,7 +18,7 @@ do
 
     if [ "$SERVER" == "$HOSTNAME_FQDN" ]; then
           echo "Strings match $SERVER $INDEX"
-
+          NODEINDEX=$INDEX
       	  echo "found server in env  $SERVER $INDEX"
           echo "broker.id=$INDEX" >> $CONFIG
     fi
@@ -64,7 +64,7 @@ for line in $(set); do
 	# replace {HOSTNAME_FQDN}
     VALUE=${VALUE//\{HOSTNAME_FQDN\}/$HOSTNAME_FQDN}
     VALUE=${VALUE//\{HOSTNAME\}/$HOSTNAME}
-    VALUE=${VALUE//\{INDEX\}/$INDEX}
+    VALUE=${VALUE//\{NODEINDEX\}/$NODEINDEX}
     #VALUE=${VALUE//'}
     #remove '
     #VALUE=${VALUE//'}
