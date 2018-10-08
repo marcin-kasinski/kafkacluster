@@ -26,9 +26,11 @@ echo KAFKA_OPTS=$KAFKA_OPTS
 
 if [[ ${CONF_TEMPLATE} && ${CONF_TEMPLATE-x} ]]; then 
   echo there is CONF_TEMPLATE
-  cp CONF_TEMPLATE $CONFIG
+  cp $CONF_TEMPLATE $CONFIG
 fi
 
+echo "Configuration before processing"
+cat $CONFIG
 
 processBROKER_NODES
 
