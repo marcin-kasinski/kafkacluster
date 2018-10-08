@@ -48,8 +48,9 @@ key=${key,,}
 
 echo "commenting line in config: key ["$key"] value ["$value"]"
 
-sed -i '/[^#]/ s/\(^.*'$key'=.*$\)/#\ \1/' $CONFIG
-sed -i '/[^#]/ s/\(^.*'$key' =.*$\)/#\ \1/' $CONFIG
+#sed -i '/[^#]/ s/\(^.*'$key'=.*$\)/#\ \1/' $CONFIG
+#sed -i '/[^#]/ s/\(^.*'$key' =.*$\)/#\ \1/' $CONFIG
+sed '/^'$key'=/s/^/#/' $CONFIG
 
 echo "adding line to config: key ["$key"] value ["$value"]"
 echo "$key=$value" >> $CONFIG

@@ -32,6 +32,8 @@ fi
 echo "Configuration before processing"
 cat $CONFIG
 
+echo ""> $CONFIG
+
 processBROKER_NODES
 
 process_param_config
