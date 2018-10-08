@@ -47,6 +47,9 @@ if [[ ${JAAS_FILE_LOCATION} && ${JAAS_FILE_LOCATION-x} ]]; then
   cat $JAAS_FILE_LOCATION
 fi
 
+  sed -i -e 's/{HOSTNAME_FQDN}/'"$HOSTNAME_FQDN"'/g' $CONFIG
+  sed -i -e 's/{HOSTNAME}/'"$HOSTNAME"'/g' $CONFIG
+
 echo "Configuration"
 cat $CONFIG
 
@@ -55,4 +58,4 @@ echo copy /opt/kafka/config/$HOSTNAME.service.keytab to /opt/kafka/config/kafka.
 cp /opt/kafka/config/$HOSTNAME.service.keytab /opt/kafka/config/kafka.service.keytab
 
 /opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
-sleep 600000
+#sleep 600000
