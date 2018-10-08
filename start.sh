@@ -24,6 +24,12 @@ fi
 
 echo KAFKA_OPTS=$KAFKA_OPTS
 
+if [[ ${CONF_TEMPLATE} && ${CONF_TEMPLATE-x} ]]; then 
+  echo there is CONF_TEMPLATE
+  cp CONF_TEMPLATE $CONFIG
+fi
+
+
 processBROKER_NODES
 
 process_param_config

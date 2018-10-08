@@ -46,7 +46,12 @@ key=${key//[_]/.}
 #lowercase
 key=${key,,}
 
-echo "adding line to config key ["$key"] value ["$value"]"
+echo "commenting line in config: key ["$key"] value ["$value"]"
+
+sed -i '/[^#]/ s/\(^.*'$key'=.*$\)/#\ \1/' ./a.txt
+sed -i '/[^#]/ s/\(^.*'$key' =.*$\)/#\ \1/' ./a.txt
+
+echo "adding line to config: key ["$key"] value ["$value"]"
 echo "$key=$value" >> $CONFIG
 }
 
