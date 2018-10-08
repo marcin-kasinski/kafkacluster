@@ -32,7 +32,7 @@ fi
 echo "Configuration before processing"
 cat $CONFIG
 
-
+#adding empty line to config
 echo "">> $CONFIG
 
 processBROKER_NODES
