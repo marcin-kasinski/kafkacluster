@@ -14,6 +14,7 @@ ENV KAFKA_MIRROR=http://ftp.man.poznan.pl/apache/kafka/2.2.1/ \
 	PROMETHEUS_JMX_AGENT_MIRROR="https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/" \
 	PROMETHEUS_JMX_AGENT_VERSION="0.3.1" \
 	PROMETHEUS_JMX_AGENT_PORT="8080"
+
 	
 ENV KAFKA_OPTS=-javaagent:/opt/jmx_prometheus_javaagent/jmx_prometheus_javaagent.jar=${PROMETHEUS_JMX_AGENT_PORT}:/opt/jmx_prometheus_javaagent/jmx_prometheus_javaagent_kafka.yaml
 
