@@ -1,4 +1,4 @@
-FROM openjdk:10
+FROM openjdk:11
 #FROM ubuntu:16.04
 MAINTAINER Marcin Kasi�ski <marcin.kasinski@gmail.com> 
 

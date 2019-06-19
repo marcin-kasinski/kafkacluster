@@ -2,7 +2,7 @@
 source /usr/src/myapp/libs.sh
 
 echo "Starting..."
-
+java -version
 echo "Environment variables ..."
 env
 
