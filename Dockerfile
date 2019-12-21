@@ -9,7 +9,8 @@ MAINTAINER Marcin Kasi�ski <marcin.kasinski@gmail.com>
 ENV KAFKA_MIRROR=http://ftp.man.poznan.pl/apache/kafka/2.3.0/ \
 #	KAFKA_VERSION=kafka_2.12-2.1.0 \
 #	KAFKA_VERSION=kafka_2.12-2.2.1 \
-	KAFKA_VERSION=kafka_2.12-2.3.0 \
+#	KAFKA_VERSION=kafka_2.12-2.3.0 \
+	KAFKA_VERSION=kafka_2.12-2.4.0 \
 	ZOOKEEPER_CONNECT="mainserver:2181" \
 	BROKER_NODES="mainserver.sdssd.sdsd.d,mainserver2" \
 	CONFIG="/opt/kafka/config/server.properties" \
