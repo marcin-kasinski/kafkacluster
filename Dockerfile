@@ -6,7 +6,7 @@ MAINTAINER Marcin Kasi�ski <marcin.kasinski@gmail.com>
 #BROKER_NODES="kafka-0.k-hs.default.svc.cluster.local:9092,kafka-1.k-hs.default.svc.cluster.local:9092,kafka-2.k-hs.default.svc.cluster.local:9092"
 
 #ENV KAFKA_MIRROR=http://ftp.man.poznan.pl/apache/kafka/2.2.1/ \
-ENV KAFKA_MIRROR=http://ftp.man.poznan.pl/apache/kafka/2.3.0/ \
+ENV KAFKA_MIRROR=http://ftp.man.poznan.pl/apache/kafka/2.4.0/ \
 #	KAFKA_VERSION=kafka_2.12-2.1.0 \
 #	KAFKA_VERSION=kafka_2.12-2.2.1 \
 #	KAFKA_VERSION=kafka_2.12-2.3.0 \
